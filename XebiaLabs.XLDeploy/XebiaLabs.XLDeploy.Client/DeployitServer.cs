@@ -1,24 +1,24 @@
-/// Copyright (c) 2015, XebiaLabs B.V., All rights reserved.
-///
-///
-/// The Manifest Editor for XL Deploy is licensed under the terms of the GPLv2
-/// <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>, like most XebiaLabs Libraries.
-/// There are special exceptions to the terms and conditions of the GPLv2 as it is applied to
-/// this software, see the FLOSS License Exception
-/// <https://github.com/jenkinsci/deployit-plugin/blob/master/LICENSE>.
-///
-/// This program is free software; you can redistribute it and/or modify it under the terms
-/// of the GNU General Public License as published by the Free Software Foundation; version 2
-/// of the License.
-///
-/// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-/// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-/// See the GNU General Public License for more details.
-///
-/// You should have received a copy of the GNU General Public License along with this
-/// program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth
-/// Floor, Boston, MA 02110-1301  USA
-///
+//? Copyright (c) 2015, XebiaLabs B.V., All rights reserved.
+//?
+//?
+//? The Manifest Editor for XL Deploy is licensed under the terms of the GPLv2
+//? <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>, like most XebiaLabs Libraries.
+//? There are special exceptions to the terms and conditions of the GPLv2 as it is applied to
+//? this software, see the FLOSS License Exception
+//? <https://github.com/jenkinsci/deployit-plugin/blob/master/LICENSE>.
+//?
+//? This program is free software; you can redistribute it and/or modify it under the terms
+//? of the GNU General Public License as published by the Free Software Foundation; version 2
+//? of the License.
+//?
+//? This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+//? without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+//? See the GNU General Public License for more details.
+//?
+//? You should have received a copy of the GNU General Public License along with this
+//? program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth
+//? Floor, Boston, MA 02110-1301  USA
+//?
 using System;
 using System.Net;
 using System.Net.Http;
@@ -74,9 +74,9 @@ namespace XebiaLabs.Deployit.Client
             }
         }
 
-        /// <summary>
-        ///     Initializes a new instance of the DeployitServer class.
-        /// </summary>
+        //? <summary>
+        //?     Initializes a new instance of the DeployitServer class.
+        //? </summary>
         public DeployitServer(): this(new DeployitServerConfig())
         {
         }
@@ -213,17 +213,17 @@ namespace XebiaLabs.Deployit.Client
             return uri.ToString().TrimEnd('/') + "/deployit/" + command.TrimStart('/');
         }
 
-        /// <summary>
-        ///     Default status code handler
-        /// </summary>
+        //? <summary>
+        //?     Default status code handler
+        //? </summary>
         internal static Func<HttpStatusCode, bool> CheckIfStatusCodeIsOK
         {
             get { return statusCode => statusCode == HttpStatusCode.OK; }
         }
 
-        /// <summary>
-        ///     Status code handler when no data is returned
-        /// </summary>
+        //? <summary>
+        //?     Status code handler when no data is returned
+        //? </summary>
         internal static Func<HttpStatusCode, bool> CheckIfStatusCodeIsOKorNotContent
         {
             get
@@ -233,15 +233,15 @@ namespace XebiaLabs.Deployit.Client
         }
 
 
-        /// <summary>
-        ///     Generic method to handle GET request to deployit
-        /// </summary>
-        /// <typeparam name="TOutput"></typeparam>
-        /// <typeparam name="TOutputgen"></typeparam>
-        /// <param name="command"></param>
-        /// <param name="input"></param>
-        /// <param name="isRequestSuccessullPredicate">if null, the method always try to generate an OUTPUT object from the request</param>
-        /// <returns></returns>
+        //? <summary>
+        //?     Generic method to handle GET request to deployit
+        //? </summary>
+        //? <typeparam name="TOutput"></typeparam>
+        //? <typeparam name="TOutputgen"></typeparam>
+        //? <param name="command"></param>
+        //? <param name="input"></param>
+        //? <param name="isRequestSuccessullPredicate">if null, the method always try to generate an OUTPUT object from the request</param>
+        //? <returns></returns>
         internal Task<ServerResponse<TOutput>> ExecuteRequestAsync<TOutput, TOutputgen>(
                 string command, IHttpResponseProvider input, Func<HttpStatusCode, bool> isRequestSuccessullPredicate =null)
             where TOutputgen : IOutputHttpContent<TOutput>, new()

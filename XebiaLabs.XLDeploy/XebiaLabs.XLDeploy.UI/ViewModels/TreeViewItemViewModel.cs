@@ -1,24 +1,24 @@
-/// Copyright (c) 2015, XebiaLabs B.V., All rights reserved.
-///
-///
-/// The Manifest Editor for XL Deploy is licensed under the terms of the GPLv2
-/// <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>, like most XebiaLabs Libraries.
-/// There are special exceptions to the terms and conditions of the GPLv2 as it is applied to
-/// this software, see the FLOSS License Exception
-/// <https://github.com/jenkinsci/deployit-plugin/blob/master/LICENSE>.
-///
-/// This program is free software; you can redistribute it and/or modify it under the terms
-/// of the GNU General Public License as published by the Free Software Foundation; version 2
-/// of the License.
-///
-/// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-/// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-/// See the GNU General Public License for more details.
-///
-/// You should have received a copy of the GNU General Public License along with this
-/// program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth
-/// Floor, Boston, MA 02110-1301  USA
-///
+//? Copyright (c) 2015, XebiaLabs B.V., All rights reserved.
+//?
+//?
+//? The Manifest Editor for XL Deploy is licensed under the terms of the GPLv2
+//? <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>, like most XebiaLabs Libraries.
+//? There are special exceptions to the terms and conditions of the GPLv2 as it is applied to
+//? this software, see the FLOSS License Exception
+//? <https://github.com/jenkinsci/deployit-plugin/blob/master/LICENSE>.
+//?
+//? This program is free software; you can redistribute it and/or modify it under the terms
+//? of the GNU General Public License as published by the Free Software Foundation; version 2
+//? of the License.
+//?
+//? This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+//? without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+//? See the GNU General Public License for more details.
+//?
+//? You should have received a copy of the GNU General Public License along with this
+//? program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth
+//? Floor, Boston, MA 02110-1301  USA
+//?
 using System.Collections.Generic;
 using Microsoft.Practices.Prism.ViewModel;
 using System.Collections.ObjectModel;
@@ -76,9 +76,9 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 	    #region Children
 
-		/// <summary>
-		/// Returns the logical child items of this object.
-		/// </summary>
+		//? <summary>
+		//? Returns the logical child items of this object.
+		//? </summary>
 		public ObservableCollection<TreeViewItemViewModel> Children
 		{
 			get
@@ -100,9 +100,9 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 		#region HasLoadedChildren
 
-		/// <summary>
-		/// Returns true if this object's Children have not yet been populated.
-		/// </summary>
+		//? <summary>
+		//? Returns true if this object's Children have not yet been populated.
+		//? </summary>
 		public bool HasDummyChild
 		{
 			get { return Children.Count == 1 && Children[0] == DUMMY_CHILD; }
@@ -112,10 +112,10 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 		#region IsExpanded
 
-		/// <summary>
-		/// Gets/sets whether the TreeViewItem
-		/// associated with this object is expanded.
-		/// </summary>
+		//? <summary>
+		//? Gets/sets whether the TreeViewItem
+		//? associated with this object is expanded.
+		//? </summary>
 		public bool IsExpanded
 		{
 			get { return _isExpanded; }
@@ -143,10 +143,10 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 		#region IsSelected
 
-		/// <summary>
-		/// Gets/sets whether the TreeViewItem
-		/// associated with this object is selected.
-		/// </summary>
+		//? <summary>
+		//? Gets/sets whether the TreeViewItem
+		//? associated with this object is selected.
+		//? </summary>
 		public bool IsSelected
 		{
 			get { return _isSelected; }
@@ -162,10 +162,10 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 		#region LoadChildren
 
-		/// <summary>
-		/// Invoked when the child items need to be loaded on demand.
-		/// Subclasses can override this to populate the Children collection.
-		/// </summary>
+		//? <summary>
+		//? Invoked when the child items need to be loaded on demand.
+		//? Subclasses can override this to populate the Children collection.
+		//? </summary>
 		protected virtual void LoadChildren()
 		{
 		}
