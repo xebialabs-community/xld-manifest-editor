@@ -233,15 +233,15 @@ namespace XebiaLabs.Deployit.Client
         }
 
 
-        //? <summary>
-        //?     Generic method to handle GET request to deployit
-        //? </summary>
-        //? <typeparam name="TOutput"></typeparam>
-        //? <typeparam name="TOutputgen"></typeparam>
-        //? <param name="command"></param>
-        //? <param name="input"></param>
-        //? <param name="isRequestSuccessullPredicate">if null, the method always try to generate an OUTPUT object from the request</param>
-        //? <returns></returns>
+        /// <summary>
+        ///     Generic method to handle GET request to deployit
+        /// </summary>
+        /// <typeparam name="TOutput"></typeparam>
+        /// <typeparam name="TOutputgen"></typeparam>
+        /// <param name="command"></param>
+        /// <param name="input"></param>
+        /// <param name="isRequestSuccessullPredicate">if null, the method always try to generate an OUTPUT object from the request</param>
+        /// <returns></returns>
         internal Task<ServerResponse<TOutput>> ExecuteRequestAsync<TOutput, TOutputgen>(
                 string command, IHttpResponseProvider input, Func<HttpStatusCode, bool> isRequestSuccessullPredicate =null)
             where TOutputgen : IOutputHttpContent<TOutput>, new()
