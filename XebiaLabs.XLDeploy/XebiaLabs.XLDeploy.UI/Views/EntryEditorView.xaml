@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="XebiaLabs.Deployit.UI.Views.EntryEditorView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:vm="clr-namespace:XebiaLabs.Deployit.UI.ViewModels"
+			 xmlns:views="clr-namespace:XebiaLabs.Deployit.UI.Views"
+			 mc:Ignorable="d" 
+			 d:DesignHeight="300" d:DesignWidth="300">
+	<Grid>
+		<Grid.Resources>
+				<BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+			</Grid.Resources>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="150"/>
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition />
+			<RowDefinition Height="auto" />
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="10,0" HorizontalAlignment="Right">
+            <Image Width="24" Height="24" VerticalAlignment="Center" Margin="3,0">
+                <Image.Style>
+                    <Style>
+                        <Setter Property="Image.Source">
+                            <Setter.Value>
+                                <BitmapImage UriSource="../Images/Deployable.png" />
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+							<DataTrigger Binding="{Binding Path=IsArtifact}" Value="True">
+								<Setter Property="Image.Source">
+									<Setter.Value>
+										<BitmapImage UriSource="../Images/Artifact.png" />
+									</Setter.Value>
+								</Setter>
+							</DataTrigger>
+						</Style.Triggers>
+					</Style>
+				</Image.Style>
+			</Image>
+			<TextBlock Text="{Binding Path=Type}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0"/>
+
+		</StackPanel>
+        <TextBlock Grid.Row="1" VerticalAlignment="Center">
+            <TextBlock.Inlines>
+                <TextBlock Text="Name" FontWeight="Bold"/>
+                <TextBlock Text="*" Foreground="Red"/>
+            </TextBlock.Inlines>
+        </TextBlock>
+		<TextBox  Margin="10,3"  Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" />
+        
+        <TextBlock VerticalAlignment="Center" Grid.Row="2"  Visibility="{Binding LocationVisibility}">
+            <TextBlock.Inlines>
+                <TextBlock Text="Location" FontWeight="Bold"/>
+                <TextBlock Text="*" Foreground="Red"/>
+            </TextBlock.Inlines>
+        </TextBlock>
+		<TextBox  Margin="10,3" Text="{Binding Path=Location, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding LocationVisibility}" />
+		
+        <TabControl ItemsSource="{Binding Path=Categories}"  Grid.Row="3" Grid.ColumnSpan="2" SelectedItem="{Binding Path=CurrentViewedCategory}">
+			<TabControl.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Path=CategoryName}" />
+				</DataTemplate>
+			</TabControl.ItemTemplate>
+			<TabControl.ContentTemplate>
+				<DataTemplate>
+					<ItemsControl ItemsSource="{Binding Properties}" AlternationCount="2">
+						<ItemsControl.ItemTemplate>
+							<DataTemplate>
+								<Grid MinHeight="30">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="150" />
+										<ColumnDefinition />
+										<ColumnDefinition Width="24" />
+									</Grid.ColumnDefinitions>
+                                    <Grid.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=(ItemsControl.AlternationIndex),
+                                                                    RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContentPresenter}}"
+                                                             Value="0">
+                                                    <Setter Property="Grid.Background" Value="White"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+
+									<TextBlock Margin="10,6" MaxWidth="150">
+                                        <TextBlock.Inlines>
+										    <TextBlock Text="{Binding PropertyDescriptor.Label}" TextTrimming="CharacterEllipsis"
+                                                       ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}" />
+										    <TextBlock Text="*" Foreground="Red" Visibility="{Binding PropertyDescriptor.Required, Converter={StaticResource boolToVisibilityConverter}}"/>
+                                        </TextBlock.Inlines>
+									</TextBlock>
+
+									<ContentControl Grid.Column="1"  HorizontalAlignment="Stretch" Content="{Binding}" IsTabStop="False">
+										<ContentControl.Resources>
+											<DataTemplate DataType="{x:Type vm:StringPropertyEntryEditorViewModel}">
+												<TextBox Text="{Binding Value, ValidatesOnDataErrors=true,UpdateSourceTrigger=PropertyChanged}" Margin="10,3"/>
+											</DataTemplate>
+											<DataTemplate DataType="{x:Type vm:IntegerPropertyEntryEditorViewModel}">
+												<TextBox Text="{Binding Value, ValidatesOnDataErrors=true,UpdateSourceTrigger=PropertyChanged}" Margin="10,3"/>
+											</DataTemplate>
+											<DataTemplate DataType="{x:Type vm:ListOrSetOfStringEditorViewModel}">
+												<TextBox Text="{Binding Value,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Margin="10,3" HorizontalAlignment="Stretch" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="50"/>
+											</DataTemplate>
+											<DataTemplate DataType="{x:Type vm:BooleanPropertyEntryEditorViewModel}">
+												<ComboBox SelectedValue="{Binding Value,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"  DisplayMemberPath="Key"  SelectedValuePath="Value" ItemsSource="{Binding AvailableValues}" Margin="10,3" HorizontalAlignment="left" />
+											</DataTemplate>
+											<DataTemplate DataType="{x:Type vm:EnumPropertyEntryEditorViewModel}">
+												<ComboBox SelectedValue="{Binding Value,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"  DisplayMemberPath="Key"  SelectedValuePath="Value" ItemsSource="{Binding AvailableValues}" Margin="10,3" HorizontalAlignment="left" />
+											</DataTemplate>
+											<DataTemplate DataType="{x:Type vm:MapStringStringEditorViewModel}">
+												<ListView ItemsSource="{Binding Items,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Margin="10,3">
+													<ListView.View>
+														<GridView>
+															<GridViewColumn Header="Key" Width="Auto" DisplayMemberBinding="{Binding Path=Key,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" />
+															<GridViewColumn Header="Value" Width="Auto"  DisplayMemberBinding="{Binding Path=Value,UpdateSourceTrigger=PropertyChanged}" />
+														</GridView>
+													</ListView.View>
+												</ListView>
+											</DataTemplate>
+											<DataTemplate DataType="{x:Type vm:SetOfCIViewModel}">
+												<views:SetOfCIDataTemplate />
+                                            </DataTemplate>
+                                            <DataTemplate DataType="{x:Type vm:ListOfCIViewModel}">
+                                                <views:ListOfCIDataTemplate />
+                                            </DataTemplate>
+                                            <DataTemplate DataType="{x:Type vm:CIReferenceViewModel}">
+                                                <TextBox Text="{Binding ReferencedCI, UpdateSourceTrigger=PropertyChanged}" Margin="10,3"/>
+                                            </DataTemplate>
+                                        </ContentControl.Resources>
+									</ContentControl>
+									<Image Grid.Column="2" Source="../Images/document_properties.png" Width="16" Height="16" ToolTip="{Binding Path=PropertyDescriptor.Description}"/>
+								</Grid>
+							</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
+				</DataTemplate>
+			</TabControl.ContentTemplate>
+		</TabControl>
+	</Grid>
+</UserControl>

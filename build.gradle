@@ -1,0 +1,31 @@
+apply plugin:'base'
+
+version = '1.0.0'
+
+task cleanSolution(type:Exec) {
+    workingDir 'PS_scripts'
+    commandLine 'powershell', '-ExecutionPolicy', 'RemoteSigned', '"& ".\\clean.ps1" ; exit \$error.length'
+    description "cleans the solution"
+}
+
+task buildManifestEditor(type:Exec) {
+    doFirst { ensureDistDir() }
+    workingDir 'PS_scripts'
+    commandLine 'powershell', '-ExecutionPolicy', 'RemoteSigned', """ "& ".\\release-xl-deploy-manifest-editor.ps1 -version $version" ; exit \$LastExitCode"""
+    outputs.file file("${buildDir}/distributions/xl-deploy-manifest-editor-${version}.zip")
+    description "builds the manifest editor distribution"
+    group 'Build'
+}
+
+clean.dependsOn(cleanSolution)
+build.dependsOn(buildManifestEditor)
+
+def ensureDistDir() {
+    def distDir = file("${buildDir}/distributions")
+    if (!(distDir.exists())) {
+        println("Creating distribution directory $distDir as it doesn't exist yet")
+        mkdir distDir
+    }
+}
+
+

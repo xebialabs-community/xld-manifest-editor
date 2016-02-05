@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == 'Debug|AnyCPU' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9468A90-9830-429F-BF49-FDA2681E1779}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XebiaLabs.XLDeploy.Client</RootNamespace>
+    <AssemblyName>XebiaLabs.XLDeploy.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RootNamespace>XebiaLabs.XLDeploy.Client</RootNamespace>
+    <AssemblyName>XebiaLabs.XLDeploy.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <RootNamespace>XebiaLabs.XLDeploy.Client</RootNamespace>
+    <AssemblyName>XebiaLabs.XLDeploy.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>..\packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CachedRepositoryService.cs" />
+    <Compile Include="CachedValue.cs" />
+    <Compile Include="CIQueryParameters.cs" />
+    <Compile Include="Credentials\CredentialLocalStorageManager.cs" />
+    <Compile Include="Credentials\EncryptedCredentialsXmlPersister.cs" />
+    <Compile Include="Credentials\ICredentialManager.cs" />
+    <Compile Include="DeployitServerConfig.cs" />
+    <Compile Include="DeployitServerConnectionException.cs" />
+    <Compile Include="DeployitErrorException.cs" />
+    <Compile Include="Http\ComplexServerResponse.cs" />
+    <Compile Include="ConnectionStatus.cs" />
+    <Compile Include="Http\DeleteHttpResponseProvider.cs" />
+    <Compile Include="DeployitServer.cs" />
+    <Compile Include="DeploymentService.cs" />
+    <Compile Include="Http\EmptyPostInputContent.cs" />
+    <Compile Include="Http\GetHttpResponseProvider.cs" />
+    <Compile Include="IDeployitCredentialProvider.cs" />
+    <Compile Include="IDeployitServer.cs" />
+    <Compile Include="IDeploymentService.cs" />
+    <Compile Include="Http\IHttpResponseProvider.cs" />
+    <Compile Include="Http\IInputHttpContent.cs" />
+    <Compile Include="IMetadataService.cs" />
+    <Compile Include="Http\ImportFilePostInputContent.cs" />
+    <Compile Include="Http\IOutputHttpContent.cs" />
+    <Compile Include="IPackageService.cs" />
+    <Compile Include="IRepositoryService.cs" />
+    <Compile Include="ITaskService.cs" />
+    <Compile Include="Manifest\Entry.cs" />
+    <Compile Include="Manifest\EntryProperty.cs" />
+    <Compile Include="Manifest\DeployitManifest.cs" />
+    <Compile Include="Manifest\Violation.cs" />
+    <Compile Include="Manifest\ViolationLevel.cs" />
+    <Compile Include="MetadataService.cs" />
+    <Compile Include="Http\NoHttpContent.cs" />
+    <Compile Include="PackageService.cs" />
+    <Compile Include="Package\PackageBuilder.cs" />
+    <Compile Include="Http\PostHttpResponseProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryService.cs" />
+    <Compile Include="Http\ServerResponse.cs" />
+    <Compile Include="RepositoryServiceExtensions.cs" />
+    <Compile Include="SimpleCredentialProvider.cs" />
+    <Compile Include="Http\StringHttpContent.cs" />
+    <Compile Include="TaskService.cs" />
+    <Compile Include="Http\UDMHttpContent.cs" />
+    <Compile Include="Http\UDMInputHttpContent.cs" />
+    <Compile Include="UDM\Application.cs" />
+    <Compile Include="UDM\ConfigurationItemIdCollection.cs" />
+    <Compile Include="UDM\TaskInfo.cs" />
+    <Compile Include="UDM\TaskStep.cs" />
+    <Compile Include="UDM\UdmBoolean.cs" />
+    <Compile Include="UDM\ConfigurationItem.cs" />
+    <Compile Include="UDM\DeployedApplication.cs" />
+    <Compile Include="UDM\DeployedApplicationEnvironment.cs" />
+    <Compile Include="UDM\DeployedApplicationVersion.cs" />
+    <Compile Include="UDM\Deployment.cs" />
+    <Compile Include="UDM\DescriptorProperty.cs" />
+    <Compile Include="ServiceBase.cs" />
+    <Compile Include="UDM\Descriptor.cs" />
+    <Compile Include="UDM\DescriptorCollection.cs" />
+    <Compile Include="UDM\PluginInfo.cs" />
+    <Compile Include="UDM\ServerInfo.cs" />
+    <Compile Include="UDM\UdmBase.cs" />
+    <Compile Include="UDM\UdmFactory.cs" />
+    <Compile Include="UDM\UdmString.cs" />
+    <Compile Include="XLINQHelper.cs" />
+    <Compile Include="Http\XmlHttpContent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.6\tools\Microsoft.Bcl.Build.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

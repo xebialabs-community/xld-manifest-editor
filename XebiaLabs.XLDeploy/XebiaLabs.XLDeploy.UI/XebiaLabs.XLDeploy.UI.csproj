@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08648424-4893-4ACC-A33B-20CDBFFF0AB4}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XebiaLabs.Deployit.UI</RootNamespace>
+    <AssemblyName>XebiaLabs.XLDeploy.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ViewModels\CIReferenceViewModel.cs" />
+    <Compile Include="Controls\TreeViewEx.cs" />
+    <Compile Include="Converters\BooleanVisibilityConverter.cs" />
+    <Compile Include="Converters\PasswordBoxToSecureString.cs" />
+    <Compile Include="DialogWindow.xaml.cs">
+      <DependentUpon>DialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IDialogWindow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Validation\AttributeValidationItem.cs" />
+    <Compile Include="Validation\IValidationItem.cs" />
+    <Compile Include="Validation\MethodValidationItem.cs" />
+    <Compile Include="Validation\ValidatableViewModel.cs" />
+    <Compile Include="ViewModels\BooleanPropertyEntryEditorViewModel.cs" />
+    <Compile Include="ViewModels\CredentialEditorViewModel.cs" />
+    <Compile Include="ViewModels\EntryEditorViewModel.cs" />
+    <Compile Include="ViewModels\EnumPropertyEntryEditorViewModel.cs" />
+    <Compile Include="ViewModels\IDialogViewModel.cs" />
+    <Compile Include="ViewModels\IEditorViewModelProvider.cs" />
+    <Compile Include="ViewModels\IEntryItemCollection.cs" />
+    <Compile Include="ViewModels\IntegerPropertyEntryEditorViewModel.cs" />
+    <Compile Include="ViewModels\ListOfCIViewModel.cs" />
+    <Compile Include="ViewModels\ListOrSetOfStringEditorViewModel.cs" />
+    <Compile Include="ViewModels\ManifestEditorInfoViewModel.cs" />
+    <Compile Include="ViewModels\ManifestEditorViewModel.cs" />
+    <Compile Include="ViewModels\ManifestItemViewModel.cs" />
+    <Compile Include="ViewModels\MapStringOfStringItemViewModel.cs" />
+    <Compile Include="ViewModels\MapStringStringEditorViewModel.cs" />
+    <Compile Include="ViewModels\MenuItemViewModel.cs" />
+    <Compile Include="ViewModels\PropertyEntryCategoryEditorViewModel.cs" />
+    <Compile Include="ViewModels\PropertyEntryEditorViewModel.cs" />
+    <Compile Include="ViewModels\PropertyItemViewModel.cs" />
+    <Compile Include="ViewModels\SetOfCIViewModel.cs" />
+    <Compile Include="ViewModels\StringPropertyEntryEditorViewModel.cs" />
+    <Compile Include="ViewModels\CredentialDialogViewModel.cs" />
+    <Compile Include="ViewModels\EntryItemViewModel.cs" />
+    <Compile Include="ViewModels\TreeViewItemViewModel.cs" />
+    <Compile Include="ViewModelToViewDataTemplateSelector.cs" />
+    <Compile Include="Views\EntryEditorView.xaml.cs">
+      <DependentUpon>EntryEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListOfCIDataTemplate.xaml.cs">
+      <DependentUpon>ListOfCIDataTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CredentialDialogView.xaml.cs">
+      <DependentUpon>CredentialDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CredentialEditorView.xaml.cs">
+      <DependentUpon>CredentialEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManifestEditorInfoView.xaml.cs">
+      <DependentUpon>ManifestEditorInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManifestEditorView.xaml.cs">
+      <DependentUpon>ManifestEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SetOfCIDataTemplate.xaml.cs">
+      <DependentUpon>SetOfCIDataTemplate.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add.png" />
+    <Resource Include="Images\Artifact.png" />
+    <Resource Include="Images\Deployable.png" />
+    <Resource Include="Images\deployit_logo.jpg" />
+    <Resource Include="Images\edit_error_disabled.png" />
+    <Resource Include="Images\error.png" />
+    <Resource Include="Images\help.png" />
+    <Resource Include="Images\minimize_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EntryEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListOfCIDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CredentialDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CredentialEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ManifestEditorInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ManifestEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SetOfCIDataTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Complete_MD_32.png" />
+    <Resource Include="Images\Critical_MD_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Deployit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Deployit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Complete16.png" />
+    <Resource Include="Images\Critical16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Version.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\EmbeddedDeployable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\document_properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XebiaLabs.XLDeploy.Client\XebiaLabs.XLDeploy.Client.csproj">
+      <Project>{d9468a90-9830-429f-bf49-fda2681e1779}</Project>
+      <Name>XebiaLabs.XLDeploy.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
