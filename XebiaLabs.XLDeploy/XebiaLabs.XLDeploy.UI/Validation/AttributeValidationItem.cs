@@ -29,11 +29,11 @@ namespace XebiaLabs.Deployit.UI.Validation
         private readonly ValidationAttribute _attribute;
         private readonly string _propertyName;
 
-        //? <summary>
-        //? Initializes a new instance of the AttributeValidationItem class.
-        //? </summary>
-        //? <param name="attribute"></param>
-        //? <param name="propertyName"></param>
+        /// <summary>
+        /// Initializes a new instance of the AttributeValidationItem class.
+        /// </summary>
+        /// <param name="attribute"></param>
+        /// <param name="propertyName"></param>
         public AttributeValidationItem(ValidationAttribute attribute, string propertyName)
         {
             if (attribute == null)

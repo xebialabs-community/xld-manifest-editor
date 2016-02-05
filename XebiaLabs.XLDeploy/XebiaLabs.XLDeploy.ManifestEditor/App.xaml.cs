@@ -23,9 +23,9 @@ using System.Windows;
 
 namespace XebiaLabs.Deployit.ManifestEditor
 {
-    //? <summary>
-    //? Interaction logic for App.xaml
-    //? </summary>
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
     public partial class App : Application
     {
     }

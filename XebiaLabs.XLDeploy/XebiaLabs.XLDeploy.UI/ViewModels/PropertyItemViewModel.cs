@@ -34,9 +34,9 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 	    private readonly EntryProperty _entryProperty;
 	    private readonly ManifestEditorViewModel _editor;
 
-	    //? <summary>
-	    //? Initializes a new instance of the PropertyItemViewModel class.
-	    //? </summary>
+	    /// <summary>
+	    /// Initializes a new instance of the PropertyItemViewModel class.
+	    /// </summary>
 	    public PropertyItemViewModel(DescriptorProperty descriptorProperty, EntryItemViewModel parent,
 	        ManifestEditorViewModel editor)
 	        : base(parent)

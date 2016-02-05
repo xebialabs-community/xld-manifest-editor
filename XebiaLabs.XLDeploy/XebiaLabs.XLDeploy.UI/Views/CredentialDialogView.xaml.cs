@@ -23,9 +23,9 @@ using System.Windows.Controls;
 
 namespace XebiaLabs.Deployit.UI.Views
 {
-    //? <summary>
-    //? Interaction logic for CredentialDialogView.xaml
-    //? </summary>
+    /// <summary>
+    /// Interaction logic for CredentialDialogView.xaml
+    /// </summary>
     public partial class CredentialDialogView : UserControl
     {
         public CredentialDialogView()

@@ -23,9 +23,9 @@ using System.Windows.Controls;
 
 namespace XebiaLabs.Deployit.UI.Views
 {
-    //? <summary>
-    //? Interaction logic for CredentialEditorView.xaml
-    //? </summary>
+    /// <summary>
+    /// Interaction logic for CredentialEditorView.xaml
+    /// </summary>
     public partial class CredentialEditorView : UserControl
     {
         public CredentialEditorView()

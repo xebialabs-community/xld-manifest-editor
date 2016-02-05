@@ -29,10 +29,10 @@ namespace XebiaLabs.Deployit.UI.Validation
     {
         private readonly MethodInfo _method;
 
-        //? <summary>
-        //? Initializes a new instance of the MethodValidationItem class.
-        //? </summary>
-        //? <param name="method"></param>
+        /// <summary>
+        /// Initializes a new instance of the MethodValidationItem class.
+        /// </summary>
+        /// <param name="method"></param>
         public MethodValidationItem(MethodInfo method)
         {
             if (method == null)

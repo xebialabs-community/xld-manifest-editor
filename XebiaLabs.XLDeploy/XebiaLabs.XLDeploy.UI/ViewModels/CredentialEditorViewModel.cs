@@ -41,9 +41,9 @@ namespace XebiaLabs.Deployit.UI.ViewModels
         private string _url;
         private string _username;
 
-        //? <summary>
-        //?     Initializes a new instance of the CredentialEditorViewModel class.
-        //? </summary>
+        /// <summary>
+        ///     Initializes a new instance of the CredentialEditorViewModel class.
+        /// </summary>
         public CredentialEditorViewModel(IDeployitServer server, ICredentialManager credentialManager, Uri uri = null)
         {
             if (server == null)

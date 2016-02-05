@@ -23,9 +23,9 @@ using System.Windows.Controls;
 
 namespace XebiaLabs.Deployit.UI.Views
 {
-    //? <summary>
-    //? Interaction logic for SetOfCIDataTemplate.xaml
-    //? </summary>
+    /// <summary>
+    /// Interaction logic for SetOfCIDataTemplate.xaml
+    /// </summary>
     public partial class SetOfCIDataTemplate : StackPanel
     {
         public SetOfCIDataTemplate()

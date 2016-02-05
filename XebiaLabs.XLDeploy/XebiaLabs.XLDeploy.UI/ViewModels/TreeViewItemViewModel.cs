@@ -76,9 +76,9 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 	    #region Children
 
-		//? <summary>
-		//? Returns the logical child items of this object.
-		//? </summary>
+		/// <summary>
+		/// Returns the logical child items of this object.
+		/// </summary>
 		public ObservableCollection<TreeViewItemViewModel> Children
 		{
 			get
@@ -100,9 +100,9 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 		#region HasLoadedChildren
 
-		//? <summary>
-		//? Returns true if this object's Children have not yet been populated.
-		//? </summary>
+		/// <summary>
+		/// Returns true if this object's Children have not yet been populated.
+		/// </summary>
 		public bool HasDummyChild
 		{
 			get { return Children.Count == 1 && Children[0] == DUMMY_CHILD; }
@@ -112,10 +112,10 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 		#region IsExpanded
 
-		//? <summary>
-		//? Gets/sets whether the TreeViewItem
-		//? associated with this object is expanded.
-		//? </summary>
+		/// <summary>
+		/// Gets/sets whether the TreeViewItem
+		/// associated with this object is expanded.
+		/// </summary>
 		public bool IsExpanded
 		{
 			get { return _isExpanded; }
@@ -143,10 +143,10 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 		#region IsSelected
 
-		//? <summary>
-		//? Gets/sets whether the TreeViewItem
-		//? associated with this object is selected.
-		//? </summary>
+		/// <summary>
+		/// Gets/sets whether the TreeViewItem
+		/// associated with this object is selected.
+		/// </summary>
 		public bool IsSelected
 		{
 			get { return _isSelected; }
@@ -162,10 +162,10 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
 		#region LoadChildren
 
-		//? <summary>
-		//? Invoked when the child items need to be loaded on demand.
-		//? Subclasses can override this to populate the Children collection.
-		//? </summary>
+		/// <summary>
+		/// Invoked when the child items need to be loaded on demand.
+		/// Subclasses can override this to populate the Children collection.
+		/// </summary>
 		protected virtual void LoadChildren()
 		{
 		}

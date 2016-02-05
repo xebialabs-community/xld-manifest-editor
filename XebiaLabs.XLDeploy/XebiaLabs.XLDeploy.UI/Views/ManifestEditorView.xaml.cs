@@ -23,9 +23,9 @@ using System.Windows.Controls;
 
 namespace XebiaLabs.Deployit.UI.Views
 {
-    //? <summary>
-    //? Interaction logic for ManifestEditorView.xaml
-    //? </summary>
+    /// <summary>
+    /// Interaction logic for ManifestEditorView.xaml
+    /// </summary>
     public partial class ManifestEditorView : UserControl
     {
         public ManifestEditorView()

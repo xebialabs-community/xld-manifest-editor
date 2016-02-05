@@ -74,9 +74,9 @@ namespace XebiaLabs.Deployit.Client
             }
         }
 
-        //? <summary>
-        //?     Initializes a new instance of the DeployitServer class.
-        //? </summary>
+        /// <summary>
+        ///     Initializes a new instance of the DeployitServer class.
+        /// </summary>
         public DeployitServer(): this(new DeployitServerConfig())
         {
         }
@@ -213,17 +213,17 @@ namespace XebiaLabs.Deployit.Client
             return uri.ToString().TrimEnd('/') + "/deployit/" + command.TrimStart('/');
         }
 
-        //? <summary>
-        //?     Default status code handler
-        //? </summary>
+        /// <summary>
+        ///     Default status code handler
+        /// </summary>
         internal static Func<HttpStatusCode, bool> CheckIfStatusCodeIsOK
         {
             get { return statusCode => statusCode == HttpStatusCode.OK; }
         }
 
-        //? <summary>
-        //?     Status code handler when no data is returned
-        //? </summary>
+        /// <summary>
+        ///     Status code handler when no data is returned
+        /// </summary>
         internal static Func<HttpStatusCode, bool> CheckIfStatusCodeIsOKorNotContent
         {
             get

@@ -27,17 +27,17 @@ using XebiaLabs.Deployit.Client.UDM;
 
 namespace XebiaLabs.Deployit.Client.Http
 {
-	//? <summary>
-	//? Generates an HTTPContent for an UDM object
-	//? </summary>
-	//? <typeparam name="T"></typeparam>
+	/// <summary>
+	/// Generates an HTTPContent for an UDM object
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	internal class UDMInputHttpContent<T> : IInputHttpContent where T : UdmBase
 	{
 		private readonly T _udmData;
-		//? <summary>
-		//? Initializes a new instance of the UDMInputContent class.
-		//? </summary>
-		//? <param name="udmData"></param>
+		/// <summary>
+		/// Initializes a new instance of the UDMInputContent class.
+		/// </summary>
+		/// <param name="udmData"></param>
 		public UDMInputHttpContent(T udmData)
 		{
 			if (udmData == null)

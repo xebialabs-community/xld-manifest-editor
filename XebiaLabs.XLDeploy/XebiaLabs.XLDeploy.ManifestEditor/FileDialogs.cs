@@ -27,11 +27,11 @@ namespace XebiaLabs.Deployit.ManifestEditor
 {
     internal static class FileDialogs
     {
-        //? <summary>
-        //? Opens a file dialog querying the user which manifest file to open
-        //? </summary>
-        //? <param name="title">The dialog title</param>
-        //? <returns>The user-selected manifest file, or null</returns>
+        /// <summary>
+        /// Opens a file dialog querying the user which manifest file to open
+        /// </summary>
+        /// <param name="title">The dialog title</param>
+        /// <returns>The user-selected manifest file, or null</returns>
         public static string OpenManifestFileDialog(string title)
         {
             var openDialog = new OpenFileDialog

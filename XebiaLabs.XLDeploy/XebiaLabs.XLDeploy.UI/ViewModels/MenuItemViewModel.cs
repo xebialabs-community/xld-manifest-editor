@@ -32,9 +32,9 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 		public ICommand SelectCommand { get; private set; }
 		public List<MenuItemViewModel> SubMenus { get; private set; }
 
-		//? <summary>
-		//? Initializes a new instance of the MenuItemViewModel class.
-		//? </summary>
+		/// <summary>
+		/// Initializes a new instance of the MenuItemViewModel class.
+		/// </summary>
 		public MenuItemViewModel(string header, ICommand selectCommand, List<MenuItemViewModel> subMenus)
 		{
 			if (String.IsNullOrEmpty(header))

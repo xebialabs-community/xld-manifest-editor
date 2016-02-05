@@ -23,9 +23,9 @@ using System.Windows.Controls;
 
 namespace XebiaLabs.Deployit.UI.Views
 {
-	//? <summary>
-	//? Interaction logic for EntryEditorView.xaml
-	//? </summary>
+	/// <summary>
+	/// Interaction logic for EntryEditorView.xaml
+	/// </summary>
 	public partial class EntryEditorView : UserControl
 	{
 		public EntryEditorView()

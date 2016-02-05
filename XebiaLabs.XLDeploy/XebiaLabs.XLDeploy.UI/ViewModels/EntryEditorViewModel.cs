@@ -130,9 +130,9 @@ namespace XebiaLabs.Deployit.UI.ViewModels
             throw new InvalidOperationException("Unhandled property type: " + propertyDescriptor.Kind);
 		}
 
-		//? <summary>
-		//? Initializes a new instance of the EntryEditorViewModel class.
-		//? </summary>
+		/// <summary>
+		/// Initializes a new instance of the EntryEditorViewModel class.
+		/// </summary>
 		public EntryEditorViewModel(Entry entry, ManifestEditorViewModel manifestEditor)
 		{
 			Entry = entry;

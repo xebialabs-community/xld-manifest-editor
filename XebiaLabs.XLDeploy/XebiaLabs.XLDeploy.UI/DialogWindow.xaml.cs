@@ -25,9 +25,9 @@ using XebiaLabs.Deployit.UI.ViewModels;
 
 namespace XebiaLabs.Deployit.UI
 {
-    //? <summary>
-    //?     Interaction logic for DialogWindow.xaml
-    //? </summary>
+    /// <summary>
+    ///     Interaction logic for DialogWindow.xaml
+    /// </summary>
     public partial class DialogWindow : Window, IDialogWindow
     {
         public DialogWindow()

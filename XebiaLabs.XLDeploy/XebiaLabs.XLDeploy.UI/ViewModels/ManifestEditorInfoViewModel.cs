@@ -57,10 +57,10 @@ namespace XebiaLabs.Deployit.UI.ViewModels
             }
         }
 
-        //? <summary>
-        //? Initializes a new instance of the ManifestEditorViewModel class.
-        //? </summary>
-        //? <param name="manifest"></param>
+        /// <summary>
+        /// Initializes a new instance of the ManifestEditorViewModel class.
+        /// </summary>
+        /// <param name="manifest"></param>
         public ManifestEditorInfoViewModel(DeployitManifest manifest)
         {
             _manifest = manifest;

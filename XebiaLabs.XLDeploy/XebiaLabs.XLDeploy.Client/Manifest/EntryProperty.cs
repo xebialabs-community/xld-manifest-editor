@@ -256,10 +256,10 @@ namespace XebiaLabs.Deployit.Client.Manifest
 		}
 
 
-		//? <summary>
-		//? Initializes a new instance of the ArtifactProperty class.
-		//? </summary>
-		//?<param name="xmlNode">The parameter is copied </param>
+		/// <summary>
+		/// Initializes a new instance of the ArtifactProperty class.
+		/// </summary>
+		///<param name="xmlNode">The parameter is copied </param>
 		internal EntryProperty(XElement xmlNode)
 		{
 			if (xmlNode == null)

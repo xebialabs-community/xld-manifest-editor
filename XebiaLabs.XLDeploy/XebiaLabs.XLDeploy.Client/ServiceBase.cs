@@ -34,9 +34,9 @@ namespace XebiaLabs.Deployit.Client
 		private readonly string _commandPrefix;
 		internal DeployitServer Server { get; private set; }
 
-		//? <summary>
-		//? Initializes a new instance of the ServiceBase class.
-		//? </summary>
+		/// <summary>
+		/// Initializes a new instance of the ServiceBase class.
+		/// </summary>
 		internal ServiceBase(DeployitServer server, string commandPrefix)
 		{
 			if (server == null)

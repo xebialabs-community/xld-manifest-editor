@@ -23,18 +23,18 @@ using System.Net;
 
 namespace XebiaLabs.Deployit.Client.Http
 {
-    //? <summary>
-    //? Encapsulate a response from a deployit server. The status code is unused in case of server error.
-    //? </summary>
-    //? <typeparam name="T"></typeparam>
+    /// <summary>
+    /// Encapsulate a response from a deployit server. The status code is unused in case of server error.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     internal class ServerResponse<T>
     {
         public HttpStatusCode StatusCode { get; private set; }
         public T Data { get; private set; }
 
-        //? <summary>
-        //? Initializes a new instance of the ServerResponse class.
-        //? </summary>
+        /// <summary>
+        /// Initializes a new instance of the ServerResponse class.
+        /// </summary>
         public ServerResponse(HttpStatusCode statusCode, T result)
         {
             StatusCode = statusCode;

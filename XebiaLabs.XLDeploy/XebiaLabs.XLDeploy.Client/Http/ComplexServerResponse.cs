@@ -31,9 +31,9 @@ namespace XebiaLabs.Deployit.Client.Http
 		public TOutput Data { get; private set; }
 		public TError Error { get; private set; }
 
-		//? <summary>
-		//? Initializes a new instance of the ComplexServerResponse class.
-		//? </summary>
+		/// <summary>
+		/// Initializes a new instance of the ComplexServerResponse class.
+		/// </summary>
 		public ComplexServerResponse(HttpStatusCode statusCode, bool isSuccessfull, TOutput data, TError error)
 		{
 			StatusCode = statusCode;

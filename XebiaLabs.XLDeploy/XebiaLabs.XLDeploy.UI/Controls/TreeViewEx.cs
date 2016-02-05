@@ -54,9 +54,9 @@ namespace XebiaLabs.Deployit.UI.Controls
 		}
 
 
-		//? <summary>
-		//? Initializes a new instance of the TreeViewEx class.
-		//? </summary>
+		/// <summary>
+		/// Initializes a new instance of the TreeViewEx class.
+		/// </summary>
 		public TreeViewEx()
 		{
 			SelectedItemChanged += TreeViewEx_SelectedItemChanged;
