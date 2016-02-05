@@ -1,6 +1,6 @@
 apply plugin:'base'
 
-version = '1.0.0'
+version = '5.0.1-SNAPSHOT'
 
 task cleanSolution(type:Exec) {
     workingDir 'PS_scripts'
@@ -27,5 +27,3 @@ def ensureDistDir() {
         mkdir distDir
     }
 }
-
-
