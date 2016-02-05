@@ -7,7 +7,7 @@ For more information about the XL Deploy manifest format, see the **[XL Deploy P
 
 ## Requirements ##
 
-The XL Deploy Manifest Editor is a desktop application written in .NET 4, so it should work out-of-the box in Windows environments that have this version installed. Other environments need to use an emulator that supports WPF (Windows Presentation Foundation) applications.
+The XL Deploy Manifest Editor is a desktop application written in .NET 4.5, so it should work out-of-the box in Windows environments that have this version installed. Other environments need to use an emulator that supports WPF (Windows Presentation Foundation) applications.
 
 
 ## Features ##
