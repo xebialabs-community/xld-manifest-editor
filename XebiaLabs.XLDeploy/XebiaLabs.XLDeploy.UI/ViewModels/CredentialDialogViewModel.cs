@@ -39,7 +39,7 @@ namespace XebiaLabs.Deployit.UI.ViewModels
 
         public string DialogTitle
         {
-            get { return "DeployitServer credentials"; }
+            get { return "XL Deploy credentials"; }
         }
 
         public object DialogIcon
